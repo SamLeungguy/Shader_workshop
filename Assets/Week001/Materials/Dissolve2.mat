@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve
-  m_Shader: {fileID: 4800000, guid: 7d32edbac0ba5224b8c7cb8727a23d8f, type: 3}
+  m_Name: Dissolve2
+  m_Shader: {fileID: 4800000, guid: 1b11768145fba2743aa5ae5db07146c2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -43,6 +43,26 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex1:
+        m_Texture: {fileID: 2800000, guid: 7a198bda295e43943ae022a31eb20351, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: 1d8ca9b0c311b124f8145a49b8a574bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexA:
+        m_Texture: {fileID: 2800000, guid: 7a198bda295e43943ae022a31eb20351, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexB:
+        m_Texture: {fileID: 2800000, guid: 1d8ca9b0c311b124f8145a49b8a574bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: da030a0473605a441b0d8b8a6ec2c549, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -68,7 +88,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - texMask:
-        m_Texture: {fileID: 2800000, guid: cff887b7f8ae32d47b7180e32b5b7eb4, type: 3}
+        m_Texture: {fileID: 2800000, guid: c7e466a58e9e0494e89e279059b379b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - textTex:
@@ -79,29 +99,37 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Dissolve: 0
+    - _Dissovle: 0.321
     - _DstBlend: 0
+    - _EdgeSoftness: 0
+    - _EdgeWdith: 0.1
+    - _EdgeWidth: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GlowFalloff: 0.08
     - _GlowRange: 0
     - _Metallic: 0
-    - _Mode: 0
+    - _Mode: 0.64
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PivotX: 0
+    - _PivotY: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - dissovle: 0.339
+    - dissovle: 0.51
     - edgeSoftness: 0
-    - edgeWdith: 0.095
+    - edgeWdith: 0.999
     - testing: 1
     - texWeight: -1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 1.8039216, g: 2, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 1367.1202, g: 1367.1202, b: 1367.1202, a: 1}
-    - edgeColor: {r: 1, g: 0.995283, b: 0.995283, a: 0}
+    - edgeColor: {r: 32, g: 0, b: 25.34902, a: 0}
   m_BuildTextureStacks: []

@@ -73,8 +73,12 @@ Shader "MyShader/Dissolve"
                 float4 a = tex2D(texA, i.uv);
                 float4 b = tex2D(texB, i.uv);
 
-                float4 dissovleMask = tex2D(texMask, i.uv * texMask_ST.xy).r;
+                float4 dissovleMask = 1 - tex2D(texMask, i.uv * texMask_ST.xy).r;
                 dissovleMask = dissovleMask * 0.999;
+
+                float w = smoothstep(dissovle, dissovle + edgeWdith, dissovleMask);
+                float4 o = lerp(a, b, w);
+                return o;
 
                 // when dissove increase, more pixels go to -ve
                 float dissolveWeighting = dissovleMask - dissovle; // => -1 ~ 1
@@ -83,13 +87,13 @@ Shader "MyShader/Dissolve"
                 // all the -ve dissolveWeighting to 1 (change to texB)
                 float transitWeighting = smoothstep(0.1, 0, dissolveWeighting);     // 0~0.1 => 1~0
                 //float4 o = a * (1 - transitWeighting) + b * transitWeighting;
-                float4 o = lerp(a, b, transitWeighting);
                 
                 // -ve dissolveWeighting to 0 (changed to texB),  [0, 0.1] for dissolveWeighting become edge,
                 // (0.1, 1] for dissolveWeighting (remain texA)
                 float edgeWidthWeighting = smoothstep(0, 0.1, dissolveWeighting);   // 0~0.1 => 0~1
                 edgeWidthWeighting = extractDomain(edgeWidthWeighting, 0, edgeWdith);
                 float4 tempEdgeColor = edgeWidthWeighting * edgeColor;
+                return float4(edgeWidthWeighting, edgeWidthWeighting, edgeWidthWeighting, 1);
 
                 // softness (give up, gg)
                 float4 aa = float4(edgeSoftness, edgeSoftness, edgeSoftness, 1.0);
